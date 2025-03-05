@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquête : Qui est le véritable assassin ?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enquête : Qui est le véritable assassin ?</h1>
+        <p>Entrez votre réponse à la question suivante :</p>
+        <p><strong>Qui est le véritable assassin ?</strong></p>
+
+        <input type="text" id="answer" placeholder="Tapez votre réponse ici..." />
+        <button onclick="checkAnswer()">Valider</button>
+
+        <div id="result" class="message"></div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value.trim().toLowerCase(); // Prend la réponse et la met en minuscule
+            var resultMessage = document.getElementById('result');
+
+            if (answer === "claire") {
+                resultMessage.style.color = "green";
+                resultMessage.textContent = "BRAVO !! Félicitations espions vous avez résolu l'affaire !";
+            } else {
+                resultMessage.style.color = "red";
+                resultMessage.textContent = "Désolé, ce n'est pas la bonne réponse. Essayez encore !";
+            }
+        }
+    </script>
+</body>
+</html>
